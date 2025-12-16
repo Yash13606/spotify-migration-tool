@@ -1,0 +1,38 @@
+{
+    "name": "spotify-migration-server",
+    "version": "1.0.0",
+    "description": "Backend server for Spotify liked songs migration tool",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "node --watch index.js",
+        "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+        "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
+    },
+    "keywords": [
+        "spotify",
+        "migration",
+        "oauth",
+        "express"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.18.2",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "axios": "^1.6.2",
+        "express-session": "^1.17.3",
+        "connect-redis": "^7.1.0",
+        "ioredis": "^5.3.2",
+        "pg": "^8.11.3",
+        "express-rate-limit": "^7.1.5",
+        "winston": "^3.11.0",
+        "winston-daily-rotate-file": "^4.7.1"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "supertest": "^6.3.3"
+    }
+}
