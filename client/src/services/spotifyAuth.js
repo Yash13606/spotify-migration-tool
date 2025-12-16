@@ -3,6 +3,12 @@ import axios from 'axios';
 // Configure axios to send cookies with requests
 axios.defaults.withCredentials = true;
 
+// Set base URL from environment variable (for production)
+const API_URL = import.meta.env.VITE_API_URL || '';
+if (API_URL) {
+    axios.defaults.baseURL = API_URL;
+}
+
 /**
  * Initiate OAuth login flow for an account
  * @param {'old' | 'new'} accountType - Type of account to connect

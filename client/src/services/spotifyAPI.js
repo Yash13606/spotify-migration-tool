@@ -2,6 +2,12 @@ import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 
+// Set base URL from environment variable (for production)
+const API_URL = import.meta.env.VITE_API_URL || '';
+if (API_URL) {
+    axios.defaults.baseURL = API_URL;
+}
+
 /**
  * Fetch all liked songs from an account with pagination
  * @param {'old' | 'new'} accountType - Account to fetch from
